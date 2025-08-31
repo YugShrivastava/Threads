@@ -1,36 +1,40 @@
 {
-  "name": "threads-backend",
-  "version": "1.0.0",
-  "description": "",
-  "type": "module",
-  "main": "src/server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node build/server.js",
-    "dev": "tsc-watch --onSuccess \"npm start\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/YugShrivastava/Threads.git"
-  },
-  "author": "Yug Shrivastava",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/YugShrivastava/Threads/issues"
-  },
-  "homepage": "https://github.com/YugShrivastava/Threads#readme",
-  "dependencies": {
-    "@apollo/server": "^5.0.0",
-    "@as-integrations/express5": "^1.1.2",
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.1",
-    "express": "^5.1.0",
-    "graphql": "^16.11.0",
-    "tsc-watch": "^7.1.1"
-  },
-  "devDependencies": {
-    "@types/cors": "^2.8.19",
-    "@types/express": "^5.0.3",
-    "typescript": "^5.9.2"
-  }
+    "name": "threads-backend",
+    "version": "1.0.0",
+    "description": "",
+    "type": "module",
+    "main": "src/server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "cp -r src/generated build/generated && node build/server.js",
+        "dev": "tsc-watch --onSuccess \"npm start\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/YugShrivastava/Threads.git"
+    },
+    "author": "Yug Shrivastava",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/YugShrivastava/Threads/issues"
+    },
+    "homepage": "https://github.com/YugShrivastava/Threads#readme",
+    "dependencies": {
+        "@apollo/server": "^5.0.0",
+        "@as-integrations/express5": "^1.1.2",
+        "@prisma/client": "^6.15.0",
+        "cors": "^2.8.5",
+        "dotenv": "^17.2.1",
+        "express": "^5.1.0",
+        "graphql": "^16.11.0",
+        "tsc-watch": "^7.1.1"
+    },
+    "devDependencies": {
+        "@types/cors": "^2.8.19",
+        "@types/express": "^5.0.3",
+        "@types/node": "^24.3.0",
+        "prisma": "^6.15.0",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.9.2"
+    }
 }
