@@ -2,30 +2,31 @@ import { ApolloServer } from "@apollo/server";
 import { User } from "./user/index.js";
 import type { BaseContext } from "@apollo/server";
 
-async function startApolloServer () {
+async function startApolloServer() {
     const gqlServer = new ApolloServer<BaseContext>({
-    typeDefs: `#graphql
+        typeDefs: `#graphql
+        ${User.typeDefs}
         type Query {
-            hello: String
+            ${User.queries}
         }
 
         type Mutation {
             ${User.mutations}
         }
     `,
-    resolvers: {
-        Query: {
-            ...User.resolver.queriesResolver
+        resolvers: {
+            Query: {
+                ...User.resolver.queriesResolver,
+            },
+            Mutation: {
+                ...User.resolver.mutationsResolver,
+            },
         },
-        Mutation: {
-            ...User.resolver.mutationsResolver
-        },
-    },
-});
+    });
 
-await gqlServer.start();
+    await gqlServer.start();
 
-return gqlServer;
+    return gqlServer;
 }
 
-export default startApolloServer
+export default startApolloServer;
