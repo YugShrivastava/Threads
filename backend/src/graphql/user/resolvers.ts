@@ -4,7 +4,7 @@ import {
     type UserTokenPayload,
 } from "../../services/user.js";
 
-const queriesResolver = {
+const queriesResolvers = {
     getUserToken: async (_: any, payload: UserTokenPayload) => {
         const token = await UserService.getUserToken(payload);
         
@@ -27,7 +27,7 @@ const queriesResolver = {
     }
 };
 
-const mutationsResolver = {
+const mutationsResolvers = {
     createUser: async (_: any, payload: UserPayload) => {
         const response = await UserService.createUser(payload);
 
@@ -35,7 +35,7 @@ const mutationsResolver = {
     },
 };
 
-export const resolver = {
-    queriesResolver,
-    mutationsResolver,
+export const resolvers = {
+    queriesResolvers,
+    mutationsResolvers,
 };

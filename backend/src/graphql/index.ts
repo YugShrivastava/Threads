@@ -16,10 +16,10 @@ async function startApolloServer() {
     `,
         resolvers: {
             Query: {
-                ...User.resolver.queriesResolver,
+                ...User.resolvers.queriesResolvers,
             },
             Mutation: {
-                ...User.resolver.mutationsResolver,
+                ...User.resolvers.mutationsResolvers,
             },
         },
     });
